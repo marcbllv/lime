@@ -160,9 +160,9 @@ class LimeBase(object):
         prediction_score = easy_model.score(
             neighborhood_data[:, used_features],
             labels_column, sample_weight=weights)
-        if self.verbose:
             local_pred = easy_model.predict(
                 neighborhood_data[0, used_features].reshape(1, -1))
+        if self.verbose:
             print('Intercept', easy_model.intercept_)
             print('Prediction_local', local_pred,)
             print('Right:', neighborhood_labels[0, label])
